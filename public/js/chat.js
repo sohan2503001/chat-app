@@ -10,3 +10,13 @@ document.querySelector('#myForm').addEventListener('submit', (e) =>{
     socket.emit('sendMessage', message);
 })
 
+document.querySelector('#send-location').addEventListener('click', () => {
+    if(!navigator.geolocation){
+        return alert('Geolocation is not supported by your browser.')
+    }
+
+    navigator.geolocation.getCurrentPosition((position) => {
+        const location = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
+        socket.emit('sendLocation', location)
+    })
+})
