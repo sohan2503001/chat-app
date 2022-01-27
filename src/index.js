@@ -6,6 +6,8 @@ const Filter = require('bad-words')
 const {generateMessage} = require('./utils/messages')
 const {generateLocationMessage} = require('./utils/location')
 const {addUser,removeUser,getUser,getUsersInRoom} = require('./utils/users')
+const forecast = require('./utils/forecast')
+const geocode = require('./utils/geocode')
 
 const app = express();
 const server = http.createServer(app);
