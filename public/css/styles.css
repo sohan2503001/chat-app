@@ -59,12 +59,14 @@ button:disabled {
 /* Join Page Styles */
 
 .centered-form {
-    background: #333744;
+    /* background: #333744; */
     width: 100vw;
     height: 100vh;   
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
 }
 
 .centered-form__box {

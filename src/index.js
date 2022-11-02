@@ -73,6 +73,33 @@ io.on('connection', (socket) => {
     })
 })
 
+//Weather 
+app.get('/weather', (req, res) => {
+    if(!req.query.address){
+        return res.send({
+            error: 'You must provide address'
+        })
+    }
+
+    geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
+        if (error) {
+            return res.send({ error })
+        }
+
+        forecast(latitude, longitude, (error, forecastdata) => {
+            if (error) {
+                return console.log(error)
+            }
+
+            res.send({
+                    forecast: forecastdata,
+                    location,
+                    address: req.query.address,
+                })
+        })
+    })
+})
+
 server.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
