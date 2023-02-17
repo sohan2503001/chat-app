@@ -40,4 +40,4 @@ Follow Below steps to run these app on your setup
    ```
 
 ## Deployment
-Click here for live preview : https://chat-app-sj.herokuapp.com/
+Click here for live preview : https://drv17z-3000.preview.csb.app/
